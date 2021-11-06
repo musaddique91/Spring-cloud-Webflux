@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  application:    name: ums
+  datasource:    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/ums
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:root}
+    
+    #hibernate properties 
+  jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:      ddl-auto: update 
+  messages:    basename: messages, config.i18n.messages
+ 
+            
+eureka:  instance:    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+  client:    service-url:
+      defaultZone: http://localhost:9999/eureka/
+    healthcheck:      enabled: true
+   
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+    
