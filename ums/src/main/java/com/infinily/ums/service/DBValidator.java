@@ -30,7 +30,7 @@ public class DBValidator {
 	}
 
 	public RoleBean validateSaveRole(RoleBean bean) {
-		if (roleRepository.existByName(bean.getRoleName())) {
+		if (roleRepository.existsByName(bean.getRoleName())) {
 			throw new UserRuntimeException(ErrorCodeMessage.ROLE_EXIST.getCode());
 		}
 		return bean;

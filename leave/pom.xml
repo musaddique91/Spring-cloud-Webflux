@@ -3,16 +3,21 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>ums</artifactId>
-	<name>ium</name>
-	<description>User management service</description>
 	<parent>
-		<groupId>com.infinily</groupId>
-		<artifactId>parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../parent</relativePath>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.2</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-
+	<groupId>com.infinily</groupId>
+	<artifactId>leave</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>leave</name>
+	<description>Leave service</description>
+	<properties>
+		<java.version>11</java.version>
+		<spring-cloud.version>2020.0.1</spring-cloud.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -56,14 +61,17 @@
 		<dependency>
 			<groupId>com.infinily</groupId>
 			<artifactId>security</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.infinily</groupId>
 			<artifactId>common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.infinily</groupId>
 			<artifactId>common-db</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

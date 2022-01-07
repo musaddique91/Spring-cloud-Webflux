@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.infinily</groupId>
+	<artifactId>parent</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.6.2</version>
+	</parent>
+
+	<properties>
+		<spring-cloud.version>2021.0.0</spring-cloud.version>
+		<dockerfile-maven-version>1.4.8</dockerfile-maven-version>
+		<release-version>0.0.1-SNAPSHOT</release-version>
+		<log4j2.version>2.17.1</log4j2.version>
+		<java.version>11</java.version>
+		<feign-reactor.version>3.1.5</feign-reactor.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.infinily</groupId>
+				<artifactId>common</artifactId>
+				<version>${release-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.infinily</groupId>
+				<artifactId>common-db</artifactId>
+				<version>${release-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.infinily</groupId>
+				<artifactId>security</artifactId>
+				<version>${release-version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

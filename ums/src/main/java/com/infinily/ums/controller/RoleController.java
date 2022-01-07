@@ -48,7 +48,7 @@ public class RoleController {
 
 	@GetMapping(value = "resources")
 	public HttpEntity<Flux<String>> getResources() {
-		return new ResponseEntity<>(userService.getre, HttpStatus.OK);
+		return new ResponseEntity<>(null, HttpStatus.OK);
 	}
 
 }

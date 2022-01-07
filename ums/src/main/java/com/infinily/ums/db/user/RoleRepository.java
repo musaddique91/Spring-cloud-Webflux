@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface RoleRepository extends CrudRepository<RoleEntity, Long> {
 
 	public RoleEntity findByName(String roleName);
-	public boolean existByName(String roleName);
+	public boolean existsByName(String roleName);
 
 	@Query("select r from RoleEntity r join UserEntity u on r.id=u.roleId where u.username=?1")
 	public List<RoleEntity> getRoleByUsername(String username);

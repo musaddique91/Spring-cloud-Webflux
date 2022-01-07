@@ -2,6 +2,7 @@ package com.infinily.ums;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,7 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 @EnableEurekaClient
-@ComponentScan({"com.infinily.ums","com.infinily.security","com.infinily.common","com.infinily.commondb"})
+@ComponentScan({ "com.infinily.ums", "com.infinily.security", "com.infinily.common" })
+@EntityScan({ "com.infinily.ums", "com.infinily.commondb" })
 @EnableJpaAuditing
 public class IumApplication {
 
@@ -19,12 +21,10 @@ public class IumApplication {
 		SpringApplication.run(IumApplication.class, args);
 
 	}
-	
+
 	@Bean("passEncoder")
 	public PasswordEncoder getPasswordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
-	
-	
-	
+
 }
