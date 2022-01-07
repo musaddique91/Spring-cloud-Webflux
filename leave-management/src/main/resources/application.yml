@@ -1,10 +1,12 @@
 server:
   port: 8082
 spring:
-  application:    name: product
-  datasource:    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/product
+  application:    name: leave-management
+  r2dbc:
+    url: r2dbc:pool:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/leave_management
     username: ${MYSQL_USERNAME:root}
     password: ${MYSQL_PASSWORD:root}
+    
     
     #hibernate properties 
   jpa:    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -15,7 +17,7 @@ spring:
 eureka:  instance:    lease-expiration-duration-in-seconds: 2
     lease-renewal-interval-in-seconds: 1
   client:    service-url:
-      defaultZone: http://localhost:9999/eureka/
+      defaultZone: http://localhost:8761/eureka/
     healthcheck:      enabled: true
    
 logging:

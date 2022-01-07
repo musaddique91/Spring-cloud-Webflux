@@ -3,11 +3,15 @@ spring:
   cloud:    gateway:      routes:      - id: ums
         uri: ${iumUrl:http://localhost:8081}          
         predicates:        - Path= /ums/api/**
+      - id: leave-management
+        uri: ${leave-management-url:http://localhost:8082}          
+        predicates:
+        - Path= /employee/api/**
             
 eureka:  instance:    lease-expiration-duration-in-seconds: 2
     lease-renewal-interval-in-seconds: 1
   client:    service-url:
-      defaultZone: http://localhost:9999/eureka/
+      defaultZone: http://localhost:8761/eureka/
     healthcheck:      enabled: true
       
 logging:

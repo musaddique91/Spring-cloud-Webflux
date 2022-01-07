@@ -43,7 +43,7 @@ public class WebSecurityConfig {
 				.securityContextRepository(securityContextRepository)
 				.authorizeExchange()
 				.pathMatchers("/auth/login","/user/details/**").permitAll()
-				.pathMatchers("/ums/api/**").authenticated()
+				.pathMatchers("/ums/api/**","/employee/api/**").authenticated()
 				.and()
 				.addFilterAfter(jwtWebFilter, SecurityWebFiltersOrder.FIRST).
 				build();
