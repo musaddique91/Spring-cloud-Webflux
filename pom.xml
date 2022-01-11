@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.infinily</groupId>
+  <artifactId>infinily-modules</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Infinily</name>
+  <packaging>pom</packaging>
+  
+  <properties>
+    <sonar.projectName>credity</sonar.projectName>
+  </properties>
+  
+  <modules>
+    <module>common</module>
+    <module>common-db</module>
+    <module>cbs-integration</module>
+    <module>gateway</module>
+    <module>leave-management</module>
+    <module>parent</module>
+    <module>product</module>
+    <module>registry</module>
+    <module>security</module>
+    <module>ums</module>
+  </modules>
+ </project>
